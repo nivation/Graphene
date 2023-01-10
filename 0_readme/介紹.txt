@@ -1,0 +1,23 @@
+本研究在回答：為甚麼石墨烯在不同凝膠上會有不同的strain
+目前知道的是：
+(1) graphene在agarose凝膠上會讓graphene縮起來(負的strain)
+(2) graphene在PAM凝膠上則影響不大(幾乎沒有strain)
+
+模型：總共四個 (1_model\example(但2_simulation的初始模型是跑過一段時間又加大所以會不同))
+(1) Vacuum：真空
+(2) Water：純水
+(3) Agar：Agarose水膠
+(4) PAM：PAM水膠
+
+建模方法：1_model\method.pptx
+
+模擬流程：2_simulation
+minimization->freeze graphene and polymer->unfreeze and NVT 300K
+
+分析項目：
+(1) RMSD確認平衡
+(2) Trajectory確認模型外觀與PBC影響
+(3) All C-C bond distribution and average：Agar < PAM < Water < Vacuum
+(4) 鍵周圍有沒有高分子
+(5) 鍵周圍有哪些原子，類型、數量、平均長度
+(6) 氫鍵

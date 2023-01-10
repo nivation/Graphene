@@ -1,0 +1,21 @@
+variable		input_file string Graphene_no_water
+
+units           real
+boundary        p p p
+newton          off
+pair_style      lj/charmmfsw/coul/charmmfsh 10 12
+pair_modify     mix arithmetic
+
+atom_style      full
+bond_style      harmonic
+angle_style     charmm
+dihedral_style  charmmfsw
+special_bonds   charmm
+improper_style  harmonic
+
+read_data       ${input_file}.data
+
+min_style       cg
+minimize        0.0 1.0e-8 10000 20000
+
+write_data      ${input_file}_minimized.data
